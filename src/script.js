@@ -55,7 +55,8 @@ var maskmap = new Vue({
         headers:{
           'Content-Type':'application/json'
         }
-      }).then( res => res.json())
+      })
+      .then( res => res.json())
       .then( res => {
         this.stores = res.result
         this.drawStore()
@@ -96,12 +97,8 @@ function initial(lat,lng){
     accessToken:'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
   }).addTo(mymap);
   maskmap.moveCenter(lat,lng);
-  maskmap.getStore();
-  mymap.on('dragend',monitordrag);
+  mymap.on('dragend',function(){
+    let locate = mymap.getCenter();
+    maskmap.moveCenter(locate.lat,locate.lng);
+  });
 };
-function monitordrag(){
-  let locate = mymap.getCenter();
-  maskmap.moveCenter(locate.lat,locate.lng);
-};
-
-// map
