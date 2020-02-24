@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>Mask Map</title>
+  <link rel="stylesheet" type="text/css" href="src/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+  <div id="maskmap" class="todos">
+    <div id='map'>
+    </div>
+
+
+
+    <div id="store_info" class="screen">
+      <div class="store_rule">
+
+        購買須知
+        <ol>
+        <li value=1>每人一次限購兩片（七天內只能購買一次）</li>
+        <li>身分證尾數是 1, 3, 5, 7, 9 可於週一三五購買</li>
+        <li>身分證尾數是 0, 2, 4, 6, 8 可於周二四六購買</li>
+        </ol>
+      </div>
+      <div class="store_list" v-on:clik="clickStore">
+        <store-info 
+          v-for="store in stores"
+          v-bind:item="store"
+          @click.native="clickStore(store)"
+       ></store-info>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</body>
+<script src="lib/vue.js"></script>
+<script src="src/script.js"></script>
+</html>

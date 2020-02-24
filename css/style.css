@@ -1,0 +1,64 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: '微軟正黑體';
+}
+#maskmap{
+  display: flex;
+  height: 100%;
+}
+.screen{
+  display: inline-flex;
+}
+#map {
+  width: 50%;
+}
+#store_info{
+  width: 50%;
+  background: #ececec;
+  display: block;
+}
+.store_rule{
+  margin:15px;
+  font-weight: bold;
+}
+ol{
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+.store_list{
+  height: 80%;
+  overflow-y: scroll;
+}
+.single{
+  background: white;
+  margin: 5px 10px;
+  padding:5px;
+  position: relative;
+}
+.store_distance{
+  color: #2471A3 ;
+  position: absolute;
+}
+.store_phone{
+  color: #5DADE2 ;
+}
+.store_address{
+  color: #B2BABB ;
+}
+.popbox{
+  font-family: '微軟正黑體';
+  margin: auto;
+}
+.pop_title{
+  font-weight: bold;
+  font-size: 14px;
+}
+.leaflet-popup-content{
+  display: flex;
+}
+.pop_img{
+  margin-right: 10px;
+}
